@@ -1,0 +1,274 @@
+
+:root {
+  --bg-system: #000000;
+  --bg-card: #1b1b1b;
+  --text-primary: #dddddd;
+  --text-secondary: #ffffff;
+  --accent-blue: #0871e0;
+  --accent-blue-hover: #0668ca;
+  --success-green: #027e21;
+  --success-bg: #6bffa4;
+  --danger-red: #d50c02;
+  --danger-bg: #ff6f67;
+  --border-color: #000000;
+  --input-bg: #000000;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-system);
+  border: none;
+  outline: none;
+  font-family: sf pro;
+  font-weight: 200;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Header --- */
+.header {
+  margin-bottom: 5px;
+  padding: 0 10px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-family: sf pro;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.header .glow-text {
+  color: var(--accent-blue);
+  text-shadow: none; /* Removing the cyberpunk glow */
+}
+
+/* --- iOS Style Cards (Panels) --- */
+.panel {
+  background-color: var(--bg-card);
+  border-radius: 35px; /* Smooth iOS corners */
+  padding: 24px;
+  box-shadow: 1px 1px 25px rgb(224, 224, 227);
+  border: none;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Form & Inputs --- */
+.form-group {
+  display: flex;
+  gap: 12px;
+}
+
+.terminal-input {
+  background: var(--input-bg);
+  border: 1px snow;
+  border-radius: 28px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 12px 16px;
+  flex: 1;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.terminal-input:focus {
+  background: #000000; /* Slightly darker gray on focus */
+}
+
+.terminal-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.btn-add {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 28px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 24px;
+  text-shadow: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-add:hover {
+  background: var(--accent-blue-hover);
+}
+
+.btn-add:active {
+  transform: scale(0.96); /* iOS tap effect */
+}
+
+/* --- Dashboard Stats --- */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+}
+
+.stat-card {
+  flex: 1;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-card:last-child {
+  border-right: none;
+}
+
+.stat-title {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 2.3rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+/* --- Table --- */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.student-table th {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 12px 10px;
+  font-weight: 300;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+}
+
+.student-table td {
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.student-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Remove side borders from previous theme */
+.row-pass td:first-child, .row-fail td:first-child {
+  border-left: none;
+}
+
+.score-text {
+  color: var(--text-primary);
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+/* --- iOS Pill Badges --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 12px;
+  border-radius: 20px; /* Pill shape */
+  font-size: 0.85rem;
+  font-weight: 400;
+  border: none;
+}
+
+.badge-pass {
+  color: var(--success-green);
+  background: var(--success-bg);
+}
+
+.badge-fail {
+  color: var(--danger-red);
+  background: var(--danger-bg);
+}
+
+/* Hide the dots from the cyberpunk theme */
+.dot {
+  display: none;
+}
+
+/* --- Update Controls --- */
+.update-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.score-input {
+  background: var(--input-bg);
+  border: none;
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 300;
+  padding: 6px;
+  margin: 16px;
+  width: 40px;
+  text-align: center;
+  outline: none;
+}
+
+.btn-save {
+  background: transparent;
+  border: none;
+  color: var(--accent-blue);
+  font-weight: 600;
+  padding: 8px 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-save:hover {
+  opacity: 0.7;
+}
+
+.btn-save:active {
+  transform: scale(0.95);
+}
